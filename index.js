@@ -18,7 +18,7 @@ const corsOptions = {
 	allowedHeaders: ["Content-Type", "Authorization"], // Allow only specific headers
 };
 
-app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 
 mongoose.connect(process.env.mongo_url);
 
