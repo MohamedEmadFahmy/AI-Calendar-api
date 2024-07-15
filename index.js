@@ -35,7 +35,7 @@ async function parseAvailability(inputText) {
 		Please convert the following natural language description of availability into a structured JSON format, including days of the week and their corresponding time slots.
 		
 		Ensure the following guidelines:
-		1) Note that weekends in Egypt are Friday and Saturday and weekdays are the rest.
+		1) NOTE THAT THE WEEKENDS IN EGYPT ARE FRIDAY AND SATURDAY AND WEEKDAYS ARE THE REST.
 		2) Interpret "noon" as 12:00 and "midnight" as 00:00.
 		3) If no time slot is specified for a day, have 2 nulls.
 		4) DO NOT SAY ANYTHING MORE THAN THE JSON OBJECT. DO NOT INCLUDE ANY ADDITIONAL TEXT OR COMMENTS.
