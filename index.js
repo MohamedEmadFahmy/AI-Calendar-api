@@ -74,7 +74,7 @@ async function parseAvailability(inputText) {
 				content: message,
 			},
 		],
-		model: "Llama3-70b-8192",
+		model: "whisper-large-v3",
 	});
 
 	const parsedAvailability =
