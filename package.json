@@ -4,7 +4,11 @@
 	"main": "server.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"watch": "nodemon --watch"
+		"watch": "nodemon --watch",
+		"start": "node server.js"
+	},
+	"engines": {
+		"node": "14.x"
 	},
 	"author": "",
 	"license": "ISC",
