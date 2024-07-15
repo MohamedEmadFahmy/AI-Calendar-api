@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const Groq = require("groq-sdk");
+const cors = require("cors");
 const mongoose = require("mongoose");
 const Teacher = require("./models/Teacher");
 require("dotenv").config();
@@ -10,6 +11,8 @@ const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(cors());
 
 mongoose.connect(process.env.mongo_url);
 
