@@ -10,6 +10,7 @@ const app = express();
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(
 	cors({
