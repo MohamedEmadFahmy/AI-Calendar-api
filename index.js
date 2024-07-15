@@ -36,7 +36,7 @@ async function parseAvailability(inputText) {
 		
 		Ensure the following guidelines:
 		1) NOTE THAT THE WEEKENDS IN EGYPT ARE FRIDAY AND SATURDAY AND WEEKDAYS ARE from SUNDAY TO THURSDAY.
-		2) Interpret "noon" as 12:00 and "midnight" as 00:00.
+		2) Interpret "noon" or "afternoon" as 12:00 and "midnight" as 00:00.
 		3) If no time slot is specified for a day, have 2 nulls.
 		4) DO NOT SAY ANYTHING MORE THAN THE JSON OBJECT. DO NOT INCLUDE ANY ADDITIONAL TEXT OR COMMENTS.
 		5) order the json object starting from saturday.
@@ -66,6 +66,8 @@ async function parseAvailability(inputText) {
 
 	const message = `${prompt}${inputText}`;
 
+	const maxTokens = 32000;
+
 	const chatCompletion = await groq.chat.completions.create({
 		messages: [
 			{
@@ -74,6 +76,7 @@ async function parseAvailability(inputText) {
 			},
 		],
 		model: "mixtral-8x7b-32768",
+		maxTokens: maxTokens,
 	});
 
 	const parsedAvailability =
