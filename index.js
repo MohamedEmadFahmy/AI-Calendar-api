@@ -74,7 +74,7 @@ async function parseAvailability(inputText) {
 				content: message,
 			},
 		],
-		model: "whisper-large-v3",
+		model: "mixtral-8x7b-32768",
 	});
 
 	const parsedAvailability =
