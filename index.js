@@ -40,7 +40,8 @@ async function parseAvailability(inputText) {
 		3) If no time slot is specified for a day, have 2 nulls.
 		4) DO NOT SAY ANYTHING MORE THAN THE JSON OBJECT. DO NOT INCLUDE ANY ADDITIONAL TEXT OR COMMENTS.
 		5) order the json object starting from saturday.
-		6) If i say morning its around 8-10 am and night is around 6-8 pm. 
+		6) If i say morning its around 8-10 am and night is around 6-8 pm.
+		7) if i say all day then make it from 00:00 to 23:59.
 
 
 		Example:
