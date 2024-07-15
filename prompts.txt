@@ -1,0 +1,25 @@
+I need you to parse the following natural language description of availability into a structured JSON format. The JSON format should include the days of the week and corresponding time slots. Here is an example:
+	
+	IMPORTANT NOTES:
+		The weekends in Egypt are Friday and Saturday.
+		Noon is 12:00 and midnight is 00:00.
+		IF I DONT SPECIFY A TIME SLOT FOR A DAY, KEEP THE DAY BUT MAKE THE ARRAY EMPTY.
+		THE BELOW IS JUST AN EXAMPLE USE ONLY THE DATA I WRITE TO YOU AS REFERENCE.
+
+
+	Input: "I am available between noon and 4pm on weekends, after 7 pm to midnight on Monday and Wednesday, and after 9pm otherwise."
+
+    Output:
+    {
+		"Saturday": ["12:00", "16:00"],
+		"Sunday": ["21:00", "00:00"]
+		"Monday": ["19:00", "00:00"],
+		"Tuesday": ["21:00", "00:00"],
+		"Wednesday": ["19:00", "00:00"],
+		"Thursday": ["21:00", "00:00"],
+		"Friday": ["12:00", "16:00"],
+    }
+
+
+	Don't say here is the parsed output or anything like that, just return the JSON object.
+    Now, please parse the following availability description:
