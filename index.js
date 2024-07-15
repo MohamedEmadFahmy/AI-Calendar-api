@@ -12,7 +12,13 @@ const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(cors());
+const corsOptions = {
+	origin: true, // Allow requests from this origin
+	methods: ["GET", "POST"], // Allow only GET and POST requests
+	allowedHeaders: ["Content-Type", "Authorization"], // Allow only specific headers
+};
+
+app.use(cors(corsOptions));
 
 mongoose.connect(process.env.mongo_url);
 
