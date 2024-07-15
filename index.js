@@ -35,22 +35,20 @@ async function parseAvailability(inputText) {
 		Please convert the following natural language description of availability into a structured JSON format, including days of the week and their corresponding time slots.
 		
 		Ensure the following guidelines:
-		1) NOTE THAT THE WEEKENDS IN EGYPT ARE FRIDAY AND SATURDAY AND WEEKDAYS ARE from SUNDAY TO THURSDAY.
+		1) NOTE THAT ONLY FRIDAY AND SATURDAY ARE WEEKENDS.
 		2) Interpret "noon" or "afternoon" as 12:00 and "midnight" as 23:59.
 		3) If no time slot is specified for a day, have 2 nulls.
 		4) DO NOT SAY ANYTHING MORE THAN THE JSON OBJECT. DO NOT INCLUDE ANY ADDITIONAL TEXT OR COMMENTS.
 		5) order the json object starting from saturday.
 		6) If i say morning its around 8-10 am and night is around 6-8 pm.
 		7) if i say all day then make it from 00:00 to 23:59.
+		8) sunday IS NOT A WEEKEND IT IS A WEEKDAY.
 
 
-		Example:
-			Input: "I am available between noon and 4pm on weekends, after 7 pm to midnight on Monday and Wednesday, and after 9pm otherwise."
-
-			Output:
+		Example Output:
 			{
 				"Saturday": ["12:00", "16:00"],
-				"Sunday": ["21:00", "00:00"]
+				"Sunday": [null, null]
 				"Monday": ["19:00", "00:00"],
 				"Tuesday": ["21:00", "00:00"],
 				"Wednesday": ["19:00", "00:00"],
@@ -74,8 +72,7 @@ async function parseAvailability(inputText) {
 				content: message,
 			},
 		],
-		model: "mixtral-8x7b-32768",
-		max_tokens: maxTokens,
+		model: "llama3-70b-8192",
 	});
 
 	const parsedAvailability =
