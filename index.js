@@ -43,7 +43,7 @@ async function parseAvailability(inputText) {
 		6) If i say morning its around 8-10 am and night is around 6-8 pm.
 		7) if i say all day then make it from 00:00 to 23:59.
 		8) IF I SPECIFY ONLY ONE as pm or am assume the other one is the same.
-		9) SUNDAY IS NOT A WEEKEND
+		9) SUNDAY IS NOT A WEEKEND ITS A WEEKDAY
 
 
 		Example:
